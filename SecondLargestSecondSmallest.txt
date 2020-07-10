@@ -1,0 +1,36 @@
+#! bin/bash -x
+function randomNumber(){
+randomnumber=$((RANDOM%1000))
+}
+# 2nd largest element
+function sortArray(){
+randomNumbers=("$@")
+length="${$randomNumbers[@]}"
+for (( i=0; i<#{#randomNumbers[@]}; i++ ))
+do
+        for (( j=$i; j<${#randomNumbers[@]}; j++ ))
+        do
+        if [ ${randomNumbers[$i]} -gt ${randomNumbers[$j]}; ]
+        then
+        t=${randomNumbers[$i]}
+        randomNumbers[$i]=${randomNjmbers[$j]}
+        randomnumbers[$j]=$t
+        fi
+     done
+done
+echo "the result of sorted Array is" ${randomNumbers[@]}
+echo "The second largest element is" ${randomNumbers[ $(( ${#randomNumbers[@]}-2 )) ]}
+echo "The second smallest element is" ${randomNumbers[1]}
+# Store the random numbers
+function randomNumber(){
+p=0
+while [ $p -lt 10 ]
+do
+        randomNumbersStore[((p++))]=$(randomNumber)
+done
+echo ${randomNumbersStore[@]}
+randomNumber ${randomNumbersStore[@]}
+}
+randomNumber
+
+

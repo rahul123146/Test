@@ -1,0 +1,15 @@
+#! /bin/bash -x
+read -p "Enter the numbers to find the factors of number" num
+declare t primeFactors
+i=0
+primeFactor=$num
+for ((i=2; i<=$number;i++))
+do
+        while (($number%$count == 0 ))
+        do
+        primeFactors[((i++)]=$i
+        number=$((number/i))
+        done
+done
+echo "prime factors of $primeFactor is ${primeFactors[@]}"
+

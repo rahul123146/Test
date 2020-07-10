@@ -1,0 +1,20 @@
+#! /bin/bash -x
+echo "Array value taken from user"
+ arr=(5 4 -3 -6 7)
+echo "Array elements are" ${arr[@]}
+length=${#arr[@]}
+for (( i=0; i<$length-2; i++ ))
+do
+        for (( j=i+1; j<$length-1; j++ ))
+        do
+                for (( k=j+1; k<$length; k++ ))
+                do
+                        if [ $(( arr[$i]+arr[$j]+arr[$k] )) == 0 ]
+                        then
+                        echo -e "${arr[i]} \c"
+                        echo -e "${arr[j]} \c"
+                        echo -e "${arr[k]} \n"
+                        fi
+                done
+        done
+done
