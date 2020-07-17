@@ -1,0 +1,32 @@
+class emplyeeWageBuilder
+{
+
+        static int isPartTime=1;
+        static int isFullTime=3;
+        public static int employeeWage(String company,int empRatePerHr,int numOfWorkingDays,int maxHrsPerMonth){
+        int empHrs=0,totalEmpHrs=0,totalWorkingDays=0;
+        while(totalEmpHrs<= maxHrsPerMonth && totalWorkingDays<numOfWorkingDays){
+        totalWorkingDays++;
+        int empCheck=(int) Math.floor(Math.random() * 10 )% 3;
+        switch(empCheck){
+                case isPartTime:
+                        empHrs=4;
+                        break;
+                case isFullTime:
+                        empHrs=8;
+                        break;
+                default:
+                        empHrs=0;
+        }
+        totalEmpHrs += empHrs;
+         System.out.println("Day :" +totalWorkingDays + "Emp Hr is::" +empHrs);
+        }
+        int totalEmpWage=totalEmpHrs * empRatePerHr;
+        System.out.println("Total Employee Wage for Company::" +company+" is::" + totalEmpWage);
+        return totalEmpWage;
+     }
+     public static void main(String[]args){
+        employeeWage("Relieance",23,3,13);
+        employeeWage("VMart",21,4,10);
+   }
+}

@@ -1,0 +1,78 @@
+import java.util.*;
+ class EmployeeWage
+{
+Random r=new Random();
+public static void main(String[]args)
+{
+        System.out.println("Welcome to EmplyeeWAge Computation");
+        companyDetail();
+        Random r=new Random();
+        int random=r.nextInt(3);
+        if(random==0)
+        isFullTime();
+        else if(random==1)
+        isHalfTime();
+        else
+        System.out.println("Ëmployee is present");
+}
+        public static void companyDetail()
+        {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the name of company");
+        String cname=sc.next();
+        System.out.println("company name is::" +cname);
+        }
+        public static void isFullTime()
+        {
+        System.out.println("Employee present Fulltime");
+        int DailyWagePerHrs=20;
+        int TotalWorkingHrs=8;
+        int DailyWage= DailyWagePerHrs*TotalWorkingHrs;
+        System.out.println("Daily wage is::" +DailyWage);
+        int monthWage=DailyWage*20;
+        System.out.println("monthely Wage is::" +monthWage);
+        }
+        public static void isHalfTime()
+        {
+        System.out.println("Employee is present and half time emplyeer");
+         int DailyWagePerHrs=20;
+         int TotalWorkingHrs=4;
+        int DailyWage= DailyWagePerHrs*TotalWorkingHrs;
+        System.out.println("Daily wage is::" +DailyWage);
+         int monthWage=DailyWage*20;
+        System.out.println("monthely Wage is::" +monthWage);
+        }
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+OUTPUT:::
+
+
+$ java EmployeeWage
+Welcome to EmplyeeWAge Computation
+Enter the name of company
+rahul
+company name is::rahul
+Employee is present and half time emplyeer
+Daily wage is::80
+monthely Wage is::1600
+
+dell@DESKTOP-C3TH98U MINGW64 ~/Desktop/shell-scriptpart (master)
+$ java EmployeeWage
+Welcome to EmplyeeWAge Computation
+Enter the name of company
+kunal
+company name is::kunal
+Employee present Fulltime
+Daily wage is::160
+monthely Wage is::3200
+
+dell@DESKTOP-C3TH98U MINGW64 ~/Desktop/shell-scriptpart (master)
+$ java EmployeeWage
+Welcome to EmplyeeWAge Computation
+Enter the name of company
+hhh
+company name is::hhh
+Ëmployee is present
